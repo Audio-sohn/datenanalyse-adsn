@@ -52,6 +52,10 @@ func Median(values []int) int {
 
 	}
 
+	// TODO!!!
+	// wenn es keinen direkten mittelwert gibt,
+	// dann das mittel aus den beiden einschließenden werten nehmen!
+
 	return sorted[len(sorted)/2]
 }
 
