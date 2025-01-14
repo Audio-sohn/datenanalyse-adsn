@@ -7,8 +7,16 @@ func Average(values []int) float64 {
 	if len(values) == 0 {
 		return 0.0
 	}
-	// TODO
-	return 0.0
+
+	// sum up all values
+	sum := 0
+	for _, speci := range values {
+
+		sum += speci
+
+	}
+
+	return float64(sum) / float64(len(values))
 }
 
 // Median erwartet eine Liste mit ganzzahligen Werten.
@@ -21,7 +29,29 @@ func Median(values []int) int {
 	sorted := make([]int, len(values))
 	copy(sorted, values)
 
-	// TODO
+	// start to iterate through entries
+	for i := range sorted {
+
+		minIndex := i
+
+		// check if there are any smaller entries (by iterating)
+		for j := i; j < len(sorted); j++ {
+
+			// if smaller element is found, store index in minIndex
+			if sorted[j] < sorted[minIndex] {
+
+				minIndex = j
+
+			}
+		}
+
+		// swap smallest found with i (starting Point)
+		swap := sorted[i]
+		sorted[i] = sorted[minIndex]
+		sorted[minIndex] = swap
+
+	}
+
 	return sorted[len(sorted)/2]
 }
 
