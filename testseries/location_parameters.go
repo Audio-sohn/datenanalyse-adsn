@@ -52,11 +52,21 @@ func Median(values []int) int {
 
 	}
 
-	// TODO!!!
+	var median int
+
 	// wenn es keinen direkten mittelwert gibt,
 	// dann das mittel aus den beiden einschließenden werten nehmen!
+	if len(sorted)%2 == 0 {
 
-	return sorted[len(sorted)/2]
+		median = ((sorted[len(sorted)/2-1]) + (sorted[len(sorted)/2])) / 2
+
+	} else {
+
+		median = sorted[len(sorted)/2]
+
+	}
+
+	return int(median)
 }
 
 // Mode erwartet eine Liste mit ganzzahligen Werten.
@@ -67,10 +77,14 @@ func Mode(values []int) int {
 	if len(values) == 0 {
 		return 0
 	}
-	maxpos := 0
 
-	// TODO
-	return maxpos
+	// get range from values list
+
+	// value_range := intlists.ValueRange(values)
+
+	// freq_list := AbsoluteFrequencies(values)
+
+	return 0
 }
 
 // GeometricMean erwartet eine Liste mit ganzzahligen Werten.
